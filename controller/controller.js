@@ -3,11 +3,11 @@ const Student = require("../modules/student");
 const createUser = async (req, res) => {
   try {
     const user = Student(req.body);
+    console.log(user)
     const CreateUser = await user.save();
     res.status(201).send(CreateUser);
   } catch (error) {
     res.status(400).send(error);
-    console.log(error)
   }
 };
 
